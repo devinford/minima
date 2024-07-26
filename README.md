@@ -306,6 +306,7 @@ The theme ships with an icon for `rss` and icons of select social-media platform
 - `gitlab`
 - `google_scholar`
 - `instagram`
+- `itchio`
 - `keybase`
 - `linkedin`
 - `mastodon`

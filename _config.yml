@@ -61,6 +61,7 @@ minima:
   #  - { platform: gitlab,         user_url: "https://gitlab.com/jekyll" }
   #  - { platform: google_scholar, user_url: "https://scholar.google.com/citations?user=qc6CJjYAAAAJ" }
   #  - { platform: instagram,      user_url: "https://www.instagram.com/jekyll" }
+  #  - { platform: itchio,         user_url: "https://itch.io/profile/jekyll" }
   #  - { platform: keybase,        user_url: "https://keybase.io/jekyll" }
   #  - { platform: linkedin,       user_url: "https://www.linkedin.com/in/jekyll" }
   #  - { platform: microdotblog,   user_url: "https://micro.blog/jekyll" }
