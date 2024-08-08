@@ -6,10 +6,10 @@ layout: base
 
 
 {% if site.paginate %}
-  {% assign unsliced_posts = site.tags[page.listed_category] %}
+  {% assign unsliced_posts = site.tags[page.listed_tag] %}
   {% assign posts = unsliced_posts | slice: page.post_offset, page.post_count %}
 {% else %}
-  {% assign posts = site.tags[page.listed_category] %}
+  {% assign posts = site.tags[page.listed_tag] %}
 {% endif %}
 
 
