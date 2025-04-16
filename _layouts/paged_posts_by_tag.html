@@ -6,13 +6,19 @@ layout: base
 
 {{ content }}
 
-{% if site.paginate %}
-  {% assign unsliced_posts = site.tags[page.listed_tag] %}
-  {% assign posts = unsliced_posts | slice: page.post_offset, page.post_count %}
+{% assign unsliced_posts = site.tags[page.listed_tag] %}
+
+{% if page.page_sort == "asc" %}
+  {% assign sorted_posts = unsliced_posts | sort: "date" %}
 {% else %}
-  {% assign posts = site.tags[page.listed_tag] %}
+  {% assign sorted_posts = unsliced_posts %}
 {% endif %}
 
+{% if site.paginate %}
+  {% assign posts = sorted_posts | slice: page.post_offset, page.post_count %}
+{% else %}
+  {% assign posts = sorted_posts %}
+{% endif %}
 
 <ul class="post-list">
   {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
