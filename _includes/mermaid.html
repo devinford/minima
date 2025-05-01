@@ -1,0 +1,14 @@
+<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "default",
+    });
+
+    // Query all elements with class 'language-mermaid' and initialize them
+    document.querySelectorAll('.language-mermaid').forEach(function(element) {
+      mermaid.init(undefined, element);
+    });
+  });
+</script>
