@@ -4,7 +4,7 @@ layout: base
 
 <div class="home">
   {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
+    <h1 class="page-heading">{{ page.title | escape | markdownify | remove: '<p>' | remove: '</p>' }}</h1>
   {%- endif -%}
 
   {{ content }}
@@ -19,7 +19,7 @@ layout: base
 
   {%- if posts.size > 0 -%}
     {%- if page.list_title -%}
-      <h2 class="post-list-heading">{{ page.list_title }}</h2>
+      <h2 class="post-list-heading">{{ page.list_title | escape | markdownify | remove: '<p>' | remove: '</p>' }}</h2>
     {%- endif -%}
     <ul class="post-list">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
@@ -28,7 +28,7 @@ layout: base
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
+            {{ post.title | escape | markdownify | remove: '<p>' | remove: '</p>' }}
           </a>
         </h3>
         {%- if site.show_excerpts -%}
