@@ -24,6 +24,19 @@ layout: base
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
       {%- endif -%}</p>
+      {% unless page.hide_tags %}
+        <div class="post-tags">
+          {% for tag in page.tags %}
+            {% assign tag_data = site.data.tags | where: "tag", tag | first %}
+            {% assign tag_label = tag_data.name | default: tag %}
+            {% if tag_data.path_stub %}
+              <a class="post-tag" href="{{ tag_data.path_stub | relative_url }}">{{ tag_label }}</a>
+            {% else %}
+              <span class="post-tag">{{ tag_label }}</span>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endunless %}
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
